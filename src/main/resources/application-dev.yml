@@ -1,0 +1,58 @@
+spring:
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://121.69.131.178:3306/mojito_sit?useUnicode=true&characterEncoding=utf8
+    druid:
+      # JDBC配置
+      url: jdbc:mysql://121.69.131.178:3306/mojito_sit?useUnicode=true&characterEncoding=utf8
+      username: yoolines
+      password: Yoolines+.0
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # 连接池配置
+      initial-size: 5
+      max-active: 20
+      min-idle: 5
+      max-wait: 3000
+      pool-prepared-statements: false
+      max-open-prepared-statements: -1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      max-evictable-idle-time-millis: 400000
+  # NoSQL之Redis配置
+  redis:
+    host: 121.69.131.178
+    # Redis 服务器连接端口
+    port: 6379
+    # Redis 数据库索引（默认为 0）
+    database: 0
+    # Redis 服务器连接密码（默认为空）
+    password: Yoolines+.0
+    # 连接超时时间（毫秒）
+    timeout: 3000
+    jedis:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 8
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池中的最小空闲连接
+        min-idle: 1
+mybatis-plus:
+  type-aliases-package: com.wuleilei.mojito.entity
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+# 日志配置
+logging:
+  file:
+    name: mojito.log
+    path: /Users/wuleilei/IdeaProjects/mojito/logs
+  pattern:
+    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
+    file: '%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n'
+
+# 微信配置
+wechat:
+  appId: wx2258131a878b956e
+  secret: aada3ba0439d685010e03c7345f5b44e

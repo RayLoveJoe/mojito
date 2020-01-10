@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuleilei.mojito.mapper.UserInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wuleilei.mojito.entity.UserInfo">
+        <id column="id" property="id" />
+        <result column="account" property="account" />
+        <result column="nickname" property="nickname" />
+        <result column="password" property="password" />
+        <result column="salt" property="salt" />
+        <result column="register_time" property="registerTime" />
+        <result column="state" property="state" />
+        <result column="phone" property="phone" />
+        <result column="email" property="email" />
+        <result column="phone_check" property="phoneCheck" />
+        <result column="email_check" property="emailCheck" />
+        <result column="ip" property="ip" />
+        <result column="codesend_date" property="codesendDate" />
+        <result column="user_type" property="userType" />
+        <result column="verification_code" property="verificationCode" />
+        <result column="open_id" property="openId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, account, nickname, password, salt, register_time, state, phone, email, phone_check, email_check, ip, codesend_date, user_type, verification_code, open_id
+    </sql>
+
+</mapper>
